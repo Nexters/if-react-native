@@ -1,12 +1,14 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import styled from '@emotion/native';
+import { Svg } from '../../assets';
 
 const Date = ({ date, bigger }) => {
   return (
     <DateWrapper>
       <DateText bigger={bigger}>2020.01.01</DateText>
       <Divider bigger={bigger}>
+        <Svg name="divider" />
         {/* <Icon className="icon" name="divider" /> */}
       </Divider>
     </DateWrapper>

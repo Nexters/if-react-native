@@ -1,12 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import { Story } from '../components';
 
 function MainScreen(props) {
-  return (
-    <View>
-      <Text>Main 화면</Text>
-    </View>
-  );
+  return <Story />;
 }
 
 export default MainScreen;

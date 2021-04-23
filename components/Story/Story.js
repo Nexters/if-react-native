@@ -1,8 +1,9 @@
 import React from 'react';
 import { Image } from 'react-native';
 import styled from '@emotion/native';
-import { Svg } from '../../assets';
+import { FontText } from '../common';
 import Date from '../Date';
+import StoryAddIcon from '../StoryAddIcon';
 
 const Story = ({
   title,
@@ -14,7 +15,7 @@ const Story = ({
   return (
     <StoryWrapper position={position}>
       <PictureWrapper>
-        {img ? <Image source="" /> : <Svg name="plus" />}
+        {img ? <Image source="" /> : <StoryAddIcon />}
       </PictureWrapper>
       <Date date={date} />
       <Title numberOfLines={1} isEmpty={isEmpty}>
@@ -44,7 +45,7 @@ const PictureWrapper = styled.View`
   border: 1px solid #1a1515;
 `;
 
-const Title = styled.Text`
+const Title = styled(FontText)`
   font-size: 17px;
   line-height: 20px;
   color: ${({ isEmpty }) => (isEmpty ? '#AAA7A5' : '#1a1515')};

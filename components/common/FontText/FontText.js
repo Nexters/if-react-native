@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, StyleSheet, View, ActivityIndicator } from 'react-native';
 import { useFonts } from 'expo-font';
 
-const FontText = ({ children }) => {
+const FontText = ({ children, style, ...props }) => {
   const [loaded] = useFonts({
     UhBeeSeulvely: require('../../../assets/fonts/uhbee-seulvely.ttf'),
   });
@@ -11,16 +11,15 @@ const FontText = ({ children }) => {
     return <ActivityIndicator />;
   } else
     return (
-      <View>
-        <Text style={styles.defaultStyle}>{children}</Text>
-      </View>
+      <Text style={[styles.defaultStyle, style]} {...props}>
+        {children}
+      </Text>
     );
 };
 
 const styles = StyleSheet.create({
   defaultStyle: {
     fontFamily: 'UhBeeSeulvely',
-    color: '#F00',
   },
 });
 

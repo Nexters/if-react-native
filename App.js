@@ -12,6 +12,7 @@ import MainScreen from './screens/MainScreen';
 import MyPageScreen from './screens/MyPageScreen';
 import AddStoryScreen from './screens/AddStoryScreen';
 import EditStoryScreen from './screens/EditStoryScreen';
+import MyPageEditScreen from './screens/MyPageEditScreen';
 
 import theme from './style/theme';
 
@@ -29,9 +30,18 @@ export default function App() {
           component={MainScreen}
           options={{ headerShown: false }}
         />
-        <Stack.Screen name="MyPage" component={MyPageScreen} />
+        <Stack.Screen
+          name="MyPage"
+          component={MyPageScreen}
+          options={{ headerShown: false }}
+        />
         <Stack.Screen name="AddStory" component={AddStoryScreen} />
         <Stack.Screen name="EditStory" component={EditStoryScreen} />
+        <Stack.Screen
+          name="MyPageEdit"
+          component={MyPageEditScreen}
+          options={{ headerShown: false }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

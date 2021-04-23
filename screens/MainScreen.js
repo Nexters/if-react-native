@@ -1,16 +1,19 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, SafeAreaView } from 'react-native';
 import styled from '@emotion/native';
+import { useNavigation } from '@react-navigation/native';
 import { Story } from '../components';
 import { Svg } from '../assets';
 
 function MainScreen(props) {
+  const navigation = useNavigation();
+  const onPressPlusIcon = () => navigation.navigate('AddStory');
+
   return (
     <SafeAreaViewLayout>
       <Story />
-      <ButtonWrapper>
+      <TouchableWrapper onPress={onPressPlusIcon}>
         <Svg name="add" />
-      </ButtonWrapper>
+      </TouchableWrapper>
     </SafeAreaViewLayout>
   );
 }
@@ -27,7 +30,7 @@ const Layout = styled.View`
   height: 100%;
 `;
 
-const ButtonWrapper = styled.View`
+const TouchableWrapper = styled.TouchableHighlight`
   position: absolute;
   height: 72px;
   bottom: 0;

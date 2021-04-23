@@ -6,10 +6,9 @@ import { Svg } from '../../assets';
 const Date = ({ date, bigger }) => {
   return (
     <DateWrapper>
-      <DateText bigger={bigger}>2020.01.01</DateText>
+      <DateText bigger={bigger}>{date}</DateText>
       <Divider bigger={bigger}>
         <Svg name="divider" />
-        {/* <Icon className="icon" name="divider" /> */}
       </Divider>
     </DateWrapper>
   );

@@ -9,6 +9,7 @@ import kakao from './kakao';
 import naver from './naver';
 import arrow from './arrow';
 import cancel from './cancel';
+import apple from './apple';
 
 export default {
   add,
@@ -22,4 +23,5 @@ export default {
   naver,
   arrow,
   cancel,
+  apple,
 };

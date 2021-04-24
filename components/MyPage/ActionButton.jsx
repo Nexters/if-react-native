@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/native';
 import { Svg } from '../../assets';
+import { FontText } from '../common';
 
 function ActionButton({ text, onPressFunction }) {
   return (
@@ -20,6 +21,6 @@ const Wrapper = styled.Pressable`
   margin-bottom: 24px;
 `;
 
-const ButtonText = styled.Text`
+const ButtonText = styled(FontText)`
   font-size: 16px;
 `;

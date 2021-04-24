@@ -2,10 +2,12 @@ import React from 'react';
 import styled from '@emotion/native';
 import { Svg } from '../../assets';
 import { palette } from '../../style/palette';
+import { FontText } from '../common';
 
 const accountToKor = {
   kakao: '카카오',
   naver: '네이버',
+  apple: '애플',
 };
 
 function AccountRow({ social }) {
@@ -44,13 +46,13 @@ const InnerWrapper = styled.View`
   flex-direction: row;
 `;
 
-const AccountInfo = styled.Text`
+const AccountInfo = styled(FontText)`
   margin-left: 4px;
   font-size: 14px;
 `;
 
 const LogoutButton = styled.Pressable``;
 
-const LogoutText = styled.Text`
+const LogoutText = styled(FontText)`
   font-size: 12px;
 `;

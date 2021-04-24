@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/native';
 import { useNavigation } from '@react-navigation/native';
 import { Svg } from '../../assets';
+import { FontText } from '../common';
 
 function UsernameRow({ username }) {
   const navigation = useNavigation();
@@ -28,7 +29,7 @@ const Wrapper = styled.View`
   flex-direction: row;
 `;
 
-const Username = styled.Text`
+const Username = styled(FontText)`
   font-size: 24px;
   line-height: 30px;
 `;

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from '@emotion/native';
 import { Svg } from '../assets';
 import { palette } from '../style/palette';
+import { FontText } from '../components/common';
 
 function MyPageEditScreen() {
   const [usernameInput, setUsernameInput] = useState('');
@@ -54,13 +55,14 @@ const InputWrapper = styled.View`
 const UsernameInput = styled.TextInput`
   margin-top: 24px;
   font-size: 20px;
+  font-family: UhBeeSeulvely;
 `;
 
 const CancelWrapper = styled.Pressable`
   top: 30px;
 `;
 
-const Count = styled.Text`
+const Count = styled(FontText)`
   margin-top: 8px;
   font-size: 16px;
   line-height: 28px;

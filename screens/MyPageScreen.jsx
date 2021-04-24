@@ -3,6 +3,7 @@ import styled from '@emotion/native';
 import { Linking } from 'react-native';
 import { UsernameRow, AccountRow, ActionButton } from '../components/MyPage';
 import { palette } from '../style/palette';
+import { FontText } from '../components/common';
 
 function MyPageScreen() {
   const handleClickFeedback = () => {
@@ -19,8 +20,7 @@ function MyPageScreen() {
     <>
       <ScreenWrapper>
         <UsernameRow username={'방구석 여행러'} />
-        <AccountRow social={'kakao'} />
-        {/* <AccountRow social={'naver'} /> */}
+        <AccountRow social={'apple'} />
         <ActionButton
           text="피드백 남기기"
           onPressFunction={handleClickFeedback}
@@ -39,7 +39,7 @@ const ScreenWrapper = styled.View`
   padding: 0 24px;
 `;
 
-const VersionInfo = styled.Text`
+const VersionInfo = styled(FontText)`
   color: ${palette.darkgray};
   font-weight: 400;
   font-size: 13px;

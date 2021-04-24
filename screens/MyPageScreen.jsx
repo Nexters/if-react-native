@@ -16,17 +16,19 @@ function MyPageScreen() {
   };
 
   return (
-    <ScreenWrapper>
-      <UsernameRow username={'방구석 여행러'} />
-      <AccountRow social={'kakao'} />
-      <AccountRow social={'naver'} />
-      <ActionButton
-        text="피드백 남기기"
-        onPressFunction={handleClickFeedback}
-      />
-      <ActionButton text="탈퇴하기" onPressFunction={handleClickLeave} />
+    <>
+      <ScreenWrapper>
+        <UsernameRow username={'방구석 여행러'} />
+        <AccountRow social={'kakao'} />
+        {/* <AccountRow social={'naver'} /> */}
+        <ActionButton
+          text="피드백 남기기"
+          onPressFunction={handleClickFeedback}
+        />
+        <ActionButton text="탈퇴하기" onPressFunction={handleClickLeave} />
+      </ScreenWrapper>
       <VersionInfo>버전정보 현재 1.0.0 </VersionInfo>
-    </ScreenWrapper>
+    </>
   );
 }
 
@@ -42,4 +44,7 @@ const VersionInfo = styled.Text`
   font-weight: 400;
   font-size: 13px;
   line-height: 42px;
+  position: absolute;
+  left: 24px;
+  bottom: 67px;
 `;

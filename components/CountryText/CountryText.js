@@ -24,7 +24,7 @@ export default Country;
 const CountryView = styled.View`
   flex-direction: row;
   align-items: center;
-  margin-bottom: 26px;
+  margin-bottom: 10px;
 `;
 
 const CountryFlagImageWrapper = styled.View`

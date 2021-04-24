@@ -1,15 +1,14 @@
 import React from 'react';
-import { Text, View } from 'react-native';
 import styled from '@emotion/native';
+import { FontText } from '../common';
 import { Svg } from '../../assets';
 
 const Date = ({ date, bigger }) => {
   return (
     <DateWrapper>
-      <DateText bigger={bigger}>2020.01.01</DateText>
+      <DateText bigger={bigger}>{date}</DateText>
       <Divider bigger={bigger}>
         <Svg name="divider" />
-        {/* <Icon className="icon" name="divider" /> */}
       </Divider>
     </DateWrapper>
   );
@@ -22,9 +21,8 @@ const DateWrapper = styled.View`
   margin-bottom: 16px;
 `;
 
-const DateText = styled.Text`
+const DateText = styled(FontText)`
   font-size: ${({ bigger }) => (bigger ? '16px' : '12px')};
-  letter-spacing: 0.1;
 `;
 
 const Divider = styled.View`

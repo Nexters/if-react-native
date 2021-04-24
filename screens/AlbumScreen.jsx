@@ -11,13 +11,8 @@ import AlbumList from '../components/AlbumList';
 function AlbumScreen() {
   const navigation = useNavigation();
 
-  const navigateToFeed = () => {
-    navigation.navigate('Main');
-  };
-
-  const navigateToMyPage = () => {
-    navigation.navigate('MyPage');
-  };
+  const navigateToFeed = () => navigation.navigate('Main');
+  const navigateToMyPage = () => navigation.navigate('MyPage');
 
   return (
     <SafeAreaViewLayout>

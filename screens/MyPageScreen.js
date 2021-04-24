@@ -7,9 +7,7 @@ import SafeAreaViewLayout from '../components/SafeAreaViewLayout';
 function MyPageScreen(props) {
   const navigation = useNavigation();
 
-  const navigateBack = () => {
-    navigation.goBack();
-  };
+  const navigateBack = () => navigation.goBack();
 
   return (
     <SafeAreaViewLayout>

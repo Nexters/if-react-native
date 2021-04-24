@@ -9,13 +9,8 @@ import SafeAreaViewLayout from '../components/SafeAreaViewLayout';
 function MainScreen(props) {
   const navigation = useNavigation();
 
-  const navigateToAlbum = () => {
-    navigation.navigate('Album');
-  };
-
-  const navigateToMyPage = () => {
-    navigation.navigate('MyPage');
-  };
+  const navigateToAlbum = () => navigation.navigate('Album');
+  const navigateToMyPage = () => navigation.navigate('MyPage');
 
   return (
     <SafeAreaViewLayout includeFlex={true}>

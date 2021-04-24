@@ -9,9 +9,7 @@ import { useNavigation } from '@react-navigation/native';
 function AddStoryScreen(props) {
   const navigation = useNavigation();
 
-  const navigateBack = () => {
-    navigation.goBack();
-  };
+  const navigateBack = () => navigation.goBack();
 
   const handleClickComplete = () => {
     // TODO: 수정하기

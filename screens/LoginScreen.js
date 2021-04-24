@@ -1,11 +1,10 @@
 import React from 'react';
-import { Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, SafeAreaView } from 'react-native';
 
 function LoginScreen(props) {
   return (
-    <View>
+    <SafeAreaView>
       <Text>로그인 화면</Text>
-      <Button title="피드" onPress={() => props.navigation.navigate('Feed')} />
       <Button title="앨범" onPress={() => props.navigation.navigate('Album')} />
       <Button title="메인" onPress={() => props.navigation.navigate('Main')} />
       <Button
@@ -20,7 +19,7 @@ function LoginScreen(props) {
         title="수정"
         onPress={() => props.navigation.navigate('EditStory')}
       />
-    </View>
+    </SafeAreaView>
   );
 }
 

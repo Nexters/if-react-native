@@ -44,6 +44,6 @@ const ImageContent = styled.Image`
 
 const RemoveIcon = styled.View`
   position: absolute;
-  top: -10px;
-  right: -10px;
+  top: -8px;
+  right: -5px;
 `;

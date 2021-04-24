@@ -1,12 +1,28 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, SafeAreaView } from 'react-native';
 import styled from '@emotion/native';
 import { Story } from '../components';
+import Header, { IconItem } from '../components/Header';
 import { Svg } from '../assets';
+import { useNavigation } from '@react-navigation/native';
+import SafeAreaViewLayout from '../components/SafeAreaViewLayout';
 
 function MainScreen(props) {
+  const navigation = useNavigation();
+
+  const navigateToAlbum = () => {
+    navigation.navigate('Album');
+  };
+
+  const navigateToMyPage = () => {
+    navigation.navigate('MyPage');
+  };
+
   return (
-    <SafeAreaViewLayout>
+    <SafeAreaViewLayout includeFlex={true}>
+      <Header>
+        <IconItem iconName="album" pressFunction={navigateToAlbum} />
+        <IconItem iconName="mypage" pressFunction={navigateToMyPage} />
+      </Header>
       <Story />
       <ButtonWrapper>
         <Svg name="add" />
@@ -16,10 +32,6 @@ function MainScreen(props) {
 }
 
 export default MainScreen;
-
-const SafeAreaViewLayout = styled.SafeAreaView`
-  flex: 1;
-`;
 
 const Layout = styled.View`
   position: relative;
@@ -31,5 +43,5 @@ const ButtonWrapper = styled.View`
   position: absolute;
   height: 72px;
   bottom: 0;
-  right: 0;
+  right: -24px;
 `;

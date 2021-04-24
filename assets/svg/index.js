@@ -4,6 +4,8 @@ import line from './line';
 import location from './location';
 import masking from './masking';
 import plus from './plus';
+import searchEmpty from './searchEmpty';
+import search from './search';
 
 export default {
   add,
@@ -12,4 +14,6 @@ export default {
   location,
   masking,
   plus,
+  searchEmpty,
+  search
 };

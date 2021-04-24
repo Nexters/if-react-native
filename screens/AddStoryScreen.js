@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/native';
 import Title from '../components/Title';
 import Place from '../components/Place';
+import CountryText from '../components/CountryText';
 import { COMPONENT_TYPE } from '../constants/types';
 
 function AddStoryScreen(props) {
@@ -9,6 +10,7 @@ function AddStoryScreen(props) {
     <ScreenView>
       <Title type={COMPONENT_TYPE.INPUT} />
       <Place />
+      <CountryText />
     </ScreenView>
   );
 }

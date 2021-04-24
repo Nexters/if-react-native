@@ -20,6 +20,7 @@ export default Place;
 
 const PlaceView = styled.View`
   flex-direction: row;
+  margin-bottom: 12px;
 `;
 
 const PlaceText = styled(FontText)`

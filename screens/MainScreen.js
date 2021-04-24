@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from '@emotion/native';
+import { useNavigation } from '@react-navigation/native';
 import { Story } from '../components';
 import Header, { IconItem } from '../components/Header';
 import { Svg } from '../assets';
-import { useNavigation } from '@react-navigation/native';
 import SafeAreaViewLayout from '../components/SafeAreaViewLayout';
 
 function MainScreen(props) {
@@ -11,6 +11,7 @@ function MainScreen(props) {
 
   const navigateToAlbum = () => navigation.navigate('Album');
   const navigateToMyPage = () => navigation.navigate('MyPage');
+  const onPressPlusIcon = () => navigation.navigate('AddStory');
 
   return (
     <SafeAreaViewLayout includeFlex={true}>
@@ -19,9 +20,9 @@ function MainScreen(props) {
         <IconItem iconName="mypage" pressFunction={navigateToMyPage} />
       </Header>
       <Story />
-      <ButtonWrapper>
+      <TouchableWrapper onPress={onPressPlusIcon}>
         <Svg name="add" />
-      </ButtonWrapper>
+      </TouchableWrapper>
     </SafeAreaViewLayout>
   );
 }
@@ -34,7 +35,7 @@ const Layout = styled.View`
   height: 100%;
 `;
 
-const ButtonWrapper = styled.View`
+const TouchableWrapper = styled.TouchableHighlight`
   position: absolute;
   height: 72px;
   bottom: 0;

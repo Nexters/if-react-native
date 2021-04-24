@@ -7,7 +7,7 @@ function ActionButton({ text, onPressFunction }) {
   return (
     <Wrapper onPress={onPressFunction}>
       <ButtonText>{text}</ButtonText>
-      <Svg name="arrow" />
+      <Svg name="arrow2" />
     </Wrapper>
   );
 }

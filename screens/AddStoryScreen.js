@@ -3,7 +3,8 @@ import styled from '@emotion/native';
 import Title from '../components/Title';
 import Place from '../components/Place';
 import CountryText from '../components/CountryText';
-import { COMPONENT_TYPE } from '../constants/types';
+import Image from '../components/Image';
+import { COMPONENT_TYPE, SCREEN_TYPE } from '../constants/types';
 
 function AddStoryScreen(props) {
   return (
@@ -11,6 +12,7 @@ function AddStoryScreen(props) {
       <Title type={COMPONENT_TYPE.INPUT} />
       <Place />
       <CountryText />
+      <Image screenType={SCREEN_TYPE.ADD} type={COMPONENT_TYPE.INPUT} />
     </ScreenView>
   );
 }

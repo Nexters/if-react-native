@@ -11,6 +11,7 @@ import MainScreen from './screens/MainScreen';
 import MyPageScreen from './screens/MyPageScreen';
 import AddStoryScreen from './screens/AddStoryScreen';
 import EditStoryScreen from './screens/EditStoryScreen';
+import MyPageEditScreen from './screens/MyPageEditScreen';
 
 const Stack = createStackNavigator();
 
@@ -28,6 +29,7 @@ export default function App() {
         <Stack.Screen name="MyPage" component={MyPageScreen} />
         <Stack.Screen name="AddStory" component={AddStoryScreen} />
         <Stack.Screen name="EditStory" component={EditStoryScreen} />
+        <Stack.Screen name="MyPageEdit" component={MyPageEditScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

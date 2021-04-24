@@ -4,10 +4,16 @@ import line from './line';
 import location from './location';
 import masking from './masking';
 import plus from './plus';
+import edit from './edit';
+import kakao from './kakao';
+import naver from './naver';
+import arrow from './arrow';
+import arrow2 from './arrow2';
+import cancel from './cancel';
+import apple from './apple';
 import album from './album';
 import mypage from './mypage';
 import feed from './feed';
-import arrow from './arrow';
 
 export default {
   add,
@@ -16,8 +22,14 @@ export default {
   location,
   masking,
   plus,
+  edit,
+  kakao,
+  naver,
+  arrow,
+  arrow2,
+  cancel,
+  apple,
   album,
   mypage,
   feed,
-  arrow,
 };

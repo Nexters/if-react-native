@@ -94,5 +94,5 @@ const OverflowList = styled.View`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  max-height: 361px;
+  max-height: 370px;
 `;

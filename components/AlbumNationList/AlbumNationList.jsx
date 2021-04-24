@@ -3,6 +3,7 @@ import AlbumNationItem from './AlbumNationItem';
 import { FlatList, Pressable } from 'react-native';
 import styled from '@emotion/native';
 import { palette } from '../../style/palette';
+import { FontText } from '../common';
 
 const data = [{
   id: 1,
@@ -53,7 +54,7 @@ function AlbumNationList({listTitle}) {
 
 export default AlbumNationList;
 
-const ListTitle = styled.Text`
+const ListTitle = styled(FontText)`
   font-size: 17px;
   line-height: 20px;
   color: ${palette.darkbrown};

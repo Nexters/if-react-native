@@ -4,6 +4,10 @@ import line from './line';
 import location from './location';
 import masking from './masking';
 import plus from './plus';
+import album from './album';
+import mypage from './mypage';
+import feed from './feed';
+import arrow from './arrow';
 
 export default {
   add,
@@ -12,4 +16,8 @@ export default {
   location,
   masking,
   plus,
+  album,
+  mypage,
+  feed,
+  arrow,
 };

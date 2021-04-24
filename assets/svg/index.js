@@ -4,6 +4,7 @@ import line from './line';
 import location from './location';
 import masking from './masking';
 import plus from './plus';
+import remove from './remove';
 
 export default {
   add,
@@ -12,4 +13,5 @@ export default {
   location,
   masking,
   plus,
+  remove,
 };

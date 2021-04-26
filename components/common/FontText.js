@@ -1,12 +1,11 @@
 import React from 'react';
-import { Text, StyleSheet, View, ActivityIndicator } from 'react-native';
+import { Text, StyleSheet, ActivityIndicator } from 'react-native';
 import { useFonts } from 'expo-font';
 
 const FontText = ({ children, style, ...props }) => {
   const [loaded] = useFonts({
-    UhBeeSeulvely: require('../../../assets/fonts/uhbee-seulvely.ttf'),
+    UhBeeSeulvely: require('../../assets/fonts/uhbee-seulvely.ttf'),
   });
-
   if (!loaded) {
     return <ActivityIndicator />;
   } else

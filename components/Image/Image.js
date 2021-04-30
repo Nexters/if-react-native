@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/native';
 import ImageInput from './ImageInput';
 import { Svg } from '../../assets';
@@ -7,13 +7,14 @@ import { palette } from '../../style/palette';
 import { View } from 'react-native';
 
 const Image = ({ screenType, type, image }) => {
+  const [imageData, setImage] = useState(image);
   return (
     <ImageWrapper screenType={screenType}>
-      {type === COMPONENT_TYPE.INPUT ? (
-        <ImageInput />
+      {type === COMPONENT_TYPE.INPUT && !imageData ? (
+        <ImageInput setImage={setImage} />
       ) : (
         <View>
-          <ImageContent source={image?.url} />
+          <ImageContent screenType={screenType} source={{ uri: imageData }} />
           <RemoveIcon>
             <Svg name="remove" />
           </RemoveIcon>
@@ -38,8 +39,10 @@ const ImageWrapper = styled.View`
 `;
 
 const ImageContent = styled.Image`
-  width: 268px;
-  height: 268px;
+  width: ${({ screenType }) =>
+    screenType === SCREEN_TYPE.DETAIL ? '268px' : '114px'};
+  height: ${({ screenType }) =>
+    screenType === SCREEN_TYPE.DETAIL ? '268px' : '114px'};
 `;
 
 const RemoveIcon = styled.View`

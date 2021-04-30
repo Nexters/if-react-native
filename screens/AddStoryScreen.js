@@ -7,7 +7,7 @@ import ImageList from '../components/Image';
 import Memo from '../components/Memo';
 import { COMPONENT_TYPE, SCREEN_TYPE } from '../constants/types';
 
-const images = [{ image: null }, { image: null }, { image: null }];
+const images = [null, null];
 
 function AddStoryScreen(props) {
   return (

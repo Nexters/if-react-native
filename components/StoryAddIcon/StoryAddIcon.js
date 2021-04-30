@@ -7,12 +7,17 @@ const StoryAddIcon = () => {
   const navigation = useNavigation();
   const onPressPlusIcon = () => navigation.navigate('AddStory');
   return (
-    <TouchableIcon onPress={onPressPlusIcon}>
+    <IconWrapper onPress={onPressPlusIcon}>
       <Svg name="plus" />
-    </TouchableIcon>
+    </IconWrapper>
   );
 };
 
 export default StoryAddIcon;
 
-const TouchableIcon = styled.TouchableHighlight``;
+const IconWrapper = styled.Pressable`
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+`;

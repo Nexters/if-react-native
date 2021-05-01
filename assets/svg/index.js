@@ -15,6 +15,8 @@ import apple from './apple';
 import album from './album';
 import mypage from './mypage';
 import feed from './feed';
+import searchEmpty from './searchEmpty';
+import search from './search';
 
 export default {
   add,
@@ -34,4 +36,6 @@ export default {
   album,
   mypage,
   feed,
+  searchEmpty,
+  search
 };

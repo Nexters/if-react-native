@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/native';
 
 import { palette } from '../../style/palette';
+import { FontText } from '../common';
 
 function AlbumNationItem({name, foods}) {
   return (
@@ -33,15 +34,14 @@ const Thumbnail = styled.Image`
 
 const TextWrapper = styled.View``;
 
-const NationName = styled.Text`
+const NationName = styled(FontText)`
   font-size: 17px;
   font-weight: bold;
-  line-height: 20px;
   color: ${palette.darkbrown};
 `;
 
-const NationFoods = styled.Text`
+const NationFoods = styled(FontText)`
   font-size: 12px;
-  line-height: 20px;
+  margin-top: 3px;
   color: ${palette.darkgray};
 `;

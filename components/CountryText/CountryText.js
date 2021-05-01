@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import { Pressable } from 'react-native';
 import styled from '@emotion/native';
+import { useNavigation } from '@react-navigation/native';
 import { COMPONENT_TYPE } from '../../constants/types';
 import { FontText } from '../common';
 import { palette } from '../../style/palette';
 
 const Country = ({ type }) => {
+  const navigation = useNavigation()
+  const onPressCountryText = useCallback(() => {
+    navigation.navigate('SearchCountry')
+  }, [navigation])
+
   return (
     <CountryView>
       <CountryFlagImageWrapper>
@@ -14,7 +21,9 @@ const Country = ({ type }) => {
           }
         />
       </CountryFlagImageWrapper>
-      <CountryText empty={true}>여행한 나라</CountryText>
+      <Pressable onPress={onPressCountryText}>
+        <CountryText empty={true}>여행한 나라</CountryText>
+      </Pressable>
     </CountryView>
   );
 };

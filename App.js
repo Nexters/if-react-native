@@ -1,7 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { ThemeProvider } from '@emotion/native';
+import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -12,6 +10,7 @@ import MyPageScreen from './screens/MyPageScreen';
 import AddStoryScreen from './screens/AddStoryScreen';
 import EditStoryScreen from './screens/EditStoryScreen';
 import MyPageEditScreen from './screens/MyPageEditScreen';
+import SearchCountryScreen from './screens/SearchCountryScreen';
 
 const Stack = createStackNavigator();
 
@@ -30,6 +29,7 @@ export default function App() {
         <Stack.Screen name="AddStory" component={AddStoryScreen} />
         <Stack.Screen name="EditStory" component={EditStoryScreen} />
         <Stack.Screen name="MyPageEdit" component={MyPageEditScreen} />
+        <Stack.Screen name="SearchCountry" component={SearchCountryScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

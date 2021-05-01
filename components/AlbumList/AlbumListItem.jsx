@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/native';
 
 import { palette } from '../../style/palette';
+import { FontText } from '../common';
 
 const AlbumListItem = ({name, count, index}) => {
   return (
@@ -16,7 +17,10 @@ const AlbumListItem = ({name, count, index}) => {
         >
           {name}
         </AlbumText>
-        <AlbumText marginLeft={'8px'}>
+        <AlbumText
+          marginLeft={'8px'}
+          fontSize={'14px'}
+        >
           {count}
         </AlbumText>
       </TextWrapper>
@@ -38,14 +42,13 @@ const Image = styled.Image`
 `;
 
 const TextWrapper = styled.View`
-  display: flex;
   flex-direction: row;
+  align-items: center;
   margin-top: 16px;
 `;
 
-const AlbumText = styled.Text`
-  font-size: 18px;
-  line-height: 20px;
+const AlbumText = styled(FontText)`
+  font-size: ${(props) => props.fontSize || '17px'};
   color: ${palette.darkbrown};
   max-width: 90px;
   margin-left: ${(props) => props.marginLeft || '0'} 

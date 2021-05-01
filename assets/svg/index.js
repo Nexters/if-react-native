@@ -4,6 +4,7 @@ import line from './line';
 import location from './location';
 import masking from './masking';
 import plus from './plus';
+import remove from './remove';
 import edit from './edit';
 import kakao from './kakao';
 import naver from './naver';
@@ -24,6 +25,7 @@ export default {
   location,
   masking,
   plus,
+  remove,
   edit,
   kakao,
   naver,

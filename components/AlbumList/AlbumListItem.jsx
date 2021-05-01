@@ -1,30 +1,39 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import styled from '@emotion/native';
+import { useNavigation } from '@react-navigation/native';
 
 import { palette } from '../../style/palette';
 import { FontText } from '../common';
+import { Pressable } from 'react-native';
 
 const AlbumListItem = ({name, count, index}) => {
+  const navigation = useNavigation()
+  const onPressAlbum = useCallback(() => {
+    navigation.navigate('AlbumFeed')
+  }, [navigation])
+
   return (
-    <Wrapper
-      index={index}
-    >
-      <Image />
-      <TextWrapper>
-        <AlbumText
-          numberOfLines={1}
-          ellipsizeMode={'tail'}
-        >
-          {name}
-        </AlbumText>
-        <AlbumText
-          marginLeft={'8px'}
-          fontSize={'14px'}
-        >
-          {count}
-        </AlbumText>
-      </TextWrapper>
-    </Wrapper>
+    <Pressable onPress={onPressAlbum}>
+      <Wrapper
+        index={index}
+      >
+        <Image />
+        <TextWrapper>
+          <AlbumText
+            numberOfLines={1}
+            ellipsizeMode={'tail'}
+          >
+            {name}
+          </AlbumText>
+          <AlbumText
+            marginLeft={'8px'}
+            fontSize={'14px'}
+          >
+            {count}
+          </AlbumText>
+        </TextWrapper>
+      </Wrapper>
+    </Pressable>
   )
 };
 

@@ -11,6 +11,7 @@ import AddStoryScreen from './screens/AddStoryScreen';
 import EditStoryScreen from './screens/EditStoryScreen';
 import MyPageEditScreen from './screens/MyPageEditScreen';
 import SearchCountryScreen from './screens/SearchCountryScreen';
+import AlbumFeedScreen from './screens/AlbumFeedScreen';
 
 const Stack = createStackNavigator();
 
@@ -24,6 +25,7 @@ export default function App() {
       >
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Album" component={AlbumScreen} />
+        <Stack.Screen name="AlbumFeed" component={AlbumFeedScreen} />
         <Stack.Screen name="Main" component={MainScreen} />
         <Stack.Screen name="MyPage" component={MyPageScreen} />
         <Stack.Screen name="AddStory" component={AddStoryScreen} />

@@ -1,44 +1,20 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import styled from '@emotion/native';
 import AlbumListItem from './AlbumListItem';
 import { Pressable } from 'react-native';
 import { palette } from '../../style/palette';
 
-const initialData = [{
-  id: 1,
-  imageUrl: '',
-  name: '남아프리카공화국',
-  count: 123
-}, {
-  id: 2,
-  imageUrl: '',
-  name: '일본',
-  count: 123
-}, {
-  id: 3,
-  imageUrl: '',
-  name: '중국',
-  count: 123
-}, {
-  id: 4,
-  imageUrl: '',
-  name: '독일',
-  count: 123
-}]
+function AlbumList({data}) {
+  const initialData = useMemo(() => {
+    if (data.length === 0) return [];
+    return data.slice(0, 4);
+  }, [data]);
 
-const overflowData = [{
-  id: 5,
-  imageUrl: '',
-  name: '대한민국',
-  count: 123
-}, {
-  id: 6,
-  imageUrl: '',
-  name: '베트남',
-  count: 123
-}]
+  const overflowData = useMemo(() => {
+    if (data.length <= 4) return [];
+    return data.slice(4, data.length);
+  }, [data]);
 
-function AlbumList() {
   return (
     <ListWrapper horizontal={true}>
       <InitialList>
@@ -48,27 +24,32 @@ function AlbumList() {
               <AlbumListItem
                 key={data.id}
                 name={data.name}
-                count={data.count}
+                count={data.numberOfStories}
+                albumImageUrl={data.albumStickerImageUrl}
                 index={index}
               />
             </Pressable>
           ))
         }
       </InitialList>
-      <OverflowList>
-        {
-          overflowData.map((data, index) => (
-            <Pressable onPress={() => {console.log(data.id)}}>
-              <AlbumListItem
-                key={data.id}
-                name={data.name}
-                count={data.count}
-                index={index}
-              />
-            </Pressable>
-          ))
-        }
-      </OverflowList>
+      {
+        overflowData.length > 0 ?
+          <OverflowList>
+            {
+              overflowData.map((data, index) => (
+                <Pressable onPress={() => {console.log(data.id)}}>
+                  <AlbumListItem
+                    key={data.id}
+                    name={data.name}
+                    count={data.numberOfStories}
+                    albumImageUrl={data.albumStickerImageUrl}
+                    index={index}
+                  />
+                </Pressable>
+              ))
+            }
+          </OverflowList> : null
+      }
     </ListWrapper>
   )
 }

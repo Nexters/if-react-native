@@ -1,12 +1,13 @@
 import React, { useCallback } from 'react';
 import styled from '@emotion/native';
 import { useNavigation } from '@react-navigation/native';
+import { Pressable } from 'react-native';
+import { SvgUri } from 'react-native-svg';
 
 import { palette } from '../../style/palette';
 import { FontText } from '../common';
-import { Pressable } from 'react-native';
 
-const AlbumListItem = ({name, count, index}) => {
+const AlbumListItem = ({name, count, albumImageUrl, index}) => {
   const navigation = useNavigation()
   const onPressAlbum = useCallback(() => {
     navigation.navigate('AlbumFeed')
@@ -17,7 +18,11 @@ const AlbumListItem = ({name, count, index}) => {
       <Wrapper
         index={index}
       >
-        <Image />
+        <Thumbnail
+          width={'120px'}
+          height={'120px'}
+          uri={albumImageUrl}
+        />
         <TextWrapper>
           <AlbumText
             numberOfLines={1}
@@ -44,9 +49,7 @@ const Wrapper = styled.View`
   width: 140px;
 `;
 
-const Image = styled.Image`
-  width: 120px;
-  height: 120px;
+const Thumbnail = styled(SvgUri)`
   background-color: ${palette.lightgray};
 `;
 

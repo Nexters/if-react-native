@@ -9,3 +9,10 @@ export const SCREEN_TYPE = {
   ADD: 'ADD',
   EDIT: 'EDIT',
 };
+
+export const API_METHOD = {
+  GET: 'get',
+  POST: 'post',
+  PUT: 'put',
+  DELETE: 'delete'
+}

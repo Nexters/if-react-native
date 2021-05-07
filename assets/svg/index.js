@@ -17,6 +17,7 @@ import mypage from './mypage';
 import feed from './feed';
 import searchEmpty from './searchEmpty';
 import search from './search';
+import login from './login';
 
 export default {
   add,
@@ -37,5 +38,6 @@ export default {
   mypage,
   feed,
   searchEmpty,
-  search
+  search,
+  login,
 };

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/native';
 import { Linking } from 'react-native';
 import { UsernameRow, AccountRow, ActionButton } from '../components/MyPage';
+import { Svg } from '../assets';
 import { palette } from '../style/palette';
 import { FontText } from '../components/common';
 import Header, { IconItem } from '../components/Header';
@@ -45,11 +46,11 @@ function MyPageScreen() {
 export default MyPageScreen;
 
 const VersionInfo = styled(FontText)`
+  position: absolute;
+  left: 24px;
+  bottom: 67px;
   color: ${palette.darkgray};
   font-weight: 400;
   font-size: 13px;
   line-height: 42px;
-  position: absolute;
-  left: 24px;
-  bottom: 67px;
 `;

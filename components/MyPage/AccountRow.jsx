@@ -31,10 +31,8 @@ function AccountRow({ social }) {
 export default AccountRow;
 
 const OuterWrapper = styled.View`
-  margin-top: 16px;
-  margin-bottom: 24px;
+  margin: 16px 0 24px 0;
   padding-bottom: 24px;
-  display: flex;
   flex-direction: row;
   justify-content: space-between;
   border-bottom-color: ${palette.lightgray};
@@ -42,7 +40,6 @@ const OuterWrapper = styled.View`
 `;
 
 const InnerWrapper = styled.View`
-  display: flex;
   flex-direction: row;
 `;
 

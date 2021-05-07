@@ -1,22 +1,35 @@
 import React, { useState } from 'react';
+import { Pressable } from 'react-native';
 import styled from '@emotion/native';
 import { Svg } from '../assets';
 import { palette } from '../style/palette';
-import { FontText } from '../components/common';
+import SafeAreaViewLayout from '../components/SafeAreaViewLayout';
+import { FontText, FontTextInput } from '../components/common';
+import Header, { IconItem } from '../components/Header';
+import { useNavigation } from '@react-navigation/native';
 
 function MyPageEditScreen() {
+  const navigation = useNavigation();
+  const navigateBack = () => navigation.goBack();
+
   const [usernameInput, setUsernameInput] = useState('');
+  const handleUsernmeInputChange = (inputValue) => setUsernameInput(inputValue);
+  const handleClickCancel = () => setUsernameInput('');
 
-  const handleUsernmeInputChange = (inputValue) => {
-    setUsernameInput(inputValue);
-  };
-
-  const handleClickCancel = () => {
-    setUsernameInput('');
+  const handleClickComplete = () => {
+    // TODO: 완료 함수 추가하기
   };
 
   return (
-    <ScreenWrapper>
+    <SafeAreaViewLayout>
+      <Header>
+        <IconItem iconName="arrow" pressFunction={navigateBack} />
+        <Pressable onPress={handleClickComplete}>
+          <CompleteText isComplete={usernameInput.length > 0}>
+            완료
+          </CompleteText>
+        </Pressable>
+      </Header>
       <InputWrapper>
         <UsernameInput
           autoFocus
@@ -32,16 +45,11 @@ function MyPageEditScreen() {
         )}
       </InputWrapper>
       {usernameInput.length > 0 && <Count>{usernameInput.length}/10</Count>}
-    </ScreenWrapper>
+    </SafeAreaViewLayout>
   );
 }
 
 export default MyPageEditScreen;
-
-const ScreenWrapper = styled.View`
-  margin-top: 60px;
-  padding: 0 24px;
-`;
 
 const InputWrapper = styled.View`
   padding-bottom: 8px;
@@ -52,18 +60,22 @@ const InputWrapper = styled.View`
   justify-content: space-between;
 `;
 
-const UsernameInput = styled.TextInput`
-  margin-top: 24px;
+const UsernameInput = styled(FontTextInput)`
   font-size: 20px;
-  font-family: UhBeeSeulvely;
 `;
 
 const CancelWrapper = styled.Pressable`
-  top: 30px;
+  top: 8px;
 `;
 
 const Count = styled(FontText)`
   margin-top: 8px;
   font-size: 16px;
   line-height: 28px;
+`;
+
+const CompleteText = styled(FontText)`
+  font-size: 16px;
+  color: ${({ isComplete }) =>
+    isComplete ? palette.darkbrown : palette.darkgray};
 `;

@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/native';
 import { Svg } from '../../assets';
 import { palette } from '../../style/palette';
 import { FontText } from '../common';
+import { LogoutModal } from '../Modal';
 
 const accountToKor = {
   kakao: '카카오',
@@ -11,20 +12,28 @@ const accountToKor = {
 };
 
 function AccountRow({ social }) {
-  const handleClickLogout = () => {
-    console.log('handleClickLogout');
-  };
+  const [showLogoutModal, setShowLogoutModal] = useState(false);
+
+  const handleClickLogout = () => setShowLogoutModal(true);
+  const handleModalClose = () => setShowLogoutModal(false);
 
   return (
-    <OuterWrapper>
-      <InnerWrapper>
-        <Svg name={social} />
-        <AccountInfo>{accountToKor[social]} 계정 로그인</AccountInfo>
-      </InnerWrapper>
-      <LogoutButton onPress={handleClickLogout}>
-        <LogoutText>로그아웃</LogoutText>
-      </LogoutButton>
-    </OuterWrapper>
+    <>
+      <OuterWrapper>
+        <InnerWrapper>
+          <Svg name={social} />
+          <AccountInfo>{accountToKor[social]} 계정 로그인</AccountInfo>
+        </InnerWrapper>
+        <LogoutButton onPress={handleClickLogout}>
+          <LogoutText>로그아웃</LogoutText>
+        </LogoutButton>
+        {/* 모달 */}
+      </OuterWrapper>
+      <LogoutModal
+        modalVisible={showLogoutModal}
+        handleModalClose={handleModalClose}
+      />
+    </>
   );
 }
 

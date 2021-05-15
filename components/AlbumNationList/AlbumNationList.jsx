@@ -4,10 +4,17 @@ import { FlatList, Pressable } from 'react-native';
 import styled from '@emotion/native';
 import { palette } from '../../style/palette';
 import { FontText } from '../common';
+import { useNavigation } from '@react-navigation/native';
 
 function AlbumNationList({listTitle, data}) {
+  const navigation = useNavigation();
+
   const renderAlbumNationItem = ({item}) => (
-    <Pressable onPress={() => {console.log(item.id)}}>
+    <Pressable onPress={() => {
+      navigation.navigate('AlbumFeed', {
+        countryType: item.type
+      })
+    }}>
       <AlbumNationItem
         name={item.name}
         foods={item.mainFoods}

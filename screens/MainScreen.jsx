@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from '@emotion/native';
 import { useNavigation } from '@react-navigation/native';
+import { useQuery } from 'react-query';
 import { Story } from '../components';
 import Header, { IconItem } from '../components/Header';
-import { Svg } from '../assets';
 import SafeAreaViewLayout from '../components/SafeAreaViewLayout';
+import { Svg } from '../assets';
+import { getStories } from '../lib/api/story';
 
 function MainScreen(props) {
   const navigation = useNavigation();
@@ -13,13 +15,20 @@ function MainScreen(props) {
   const navigateToMyPage = () => navigation.navigate('MyPage');
   const onPressPlusIcon = () => navigation.navigate('AddStory');
 
+  const { isFetched, data } = useQuery('getStories', getStories);
+
   return (
     <SafeAreaViewLayout includeFlex={true}>
       <Header>
         <IconItem iconName="album" pressFunction={navigateToAlbum} />
         <IconItem iconName="mypage" pressFunction={navigateToMyPage} />
       </Header>
-      <Story />
+      {isFetched &&
+        (data.length === 0 ? (
+          <Story />
+        ) : (
+          data.map(({ id, ...props }) => <Story key={id} {...props} />)
+        ))}
       <TouchableWrapper onPress={onPressPlusIcon}>
         <Svg name="add" />
       </TouchableWrapper>

@@ -5,34 +5,13 @@ import styled from '@emotion/native';
 import { palette } from '../../style/palette';
 import { FontText } from '../common';
 
-const data = [{
-  id: 1,
-  imageUrl: '',
-  name: '대만',
-  foods: '망고빙수, 밀크티, 지파이, 펑리수'
-}, {
-  id: 2,
-  imageUrl: '',
-  name: '대만',
-  foods: '망고빙수, 밀크티, 지파이, 펑리수'
-}, {
-  id: 3,
-  imageUrl: '',
-  name: '대만',
-  foods: '망고빙수, 밀크티, 지파이, 펑리수'
-}, {
-  id: 4,
-  imageUrl: '',
-  name: '대만',
-  foods: '망고빙수, 밀크티, 지파이, 펑리수'
-}]
-
-function AlbumNationList({listTitle}) {
+function AlbumNationList({listTitle, data}) {
   const renderAlbumNationItem = ({item}) => (
     <Pressable onPress={() => {console.log(item.id)}}>
       <AlbumNationItem
         name={item.name}
-        foods={item.foods}
+        foods={item.mainFoods}
+        albumImageUrl={item.albumStickerImageUrl}
       />
     </Pressable>
   )

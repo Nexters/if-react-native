@@ -1,13 +1,18 @@
 import React from 'react';
 import styled from '@emotion/native';
+import { SvgUri } from 'react-native-svg';
 
 import { palette } from '../../style/palette';
 import { FontText } from '../common';
 
-function AlbumNationItem({name, foods}) {
+function AlbumNationItem({name, foods, albumImageUrl}) {
   return (
     <Wrapper>
-      <Thumbnail />
+      <Thumbnail
+        width={'48px'}
+        height={'48px'}
+        uri={albumImageUrl}
+      />
       <TextWrapper>
         <NationName>{name}</NationName>
         <NationFoods>{foods}</NationFoods>
@@ -25,9 +30,7 @@ const Wrapper = styled.View`
   flex-direction: row;
 `;
 
-const Thumbnail = styled.Image`
-  width: 48px;
-  height: 48px;
+const Thumbnail = styled(SvgUri)`
   margin-right: 12px;
   background-color: ${palette.lightgray}; 
 `

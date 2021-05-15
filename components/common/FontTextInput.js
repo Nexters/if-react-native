@@ -2,18 +2,26 @@ import React from 'react';
 import { TextInput, StyleSheet, ActivityIndicator } from 'react-native';
 import { useFonts } from 'expo-font';
 
-const FontText = ({ children, style, value, ...props }) => {
+const FontText = ({
+  children,
+  style,
+  value,
+  onChange,
+  onChangeText,
+  ...props
+}) => {
   const [loaded] = useFonts({
     UhBeeSeulvely: require('../../assets/fonts/uhbee-seulvely.ttf'),
   });
-
   if (!loaded) {
     return <ActivityIndicator />;
   } else
     return (
       <TextInput
         style={[styles.defaultStyle, style]}
-        vlaue={value}
+        value={value}
+        onChange={onChange}
+        onChangeText={onChangeText}
         {...props}
       ></TextInput>
     );

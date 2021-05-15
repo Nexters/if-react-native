@@ -1,11 +1,38 @@
-import React from 'react';
-import { Pressable } from 'react-native';
+import React, { useEffect, useState } from 'react';
 import styled from '@emotion/native';
+import * as ImagePicker from 'expo-image-picker';
 import { Svg } from '../../assets';
+import { Platform } from 'react-native';
 
-const ImageInput = () => {
+const ImageInput = ({ setImage }) => {
+  useEffect(() => {
+    (async () => {
+      if (Platform.OS !== 'web') {
+        const {
+          status,
+        } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+        if (status !== 'granted') {
+          alert('Sorry, we need camera roll permissions to make this work!');
+        }
+      }
+    })();
+  }, []);
+
+  const pickImage = async () => {
+    const result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
+
+    if (!result.cancelled) {
+      setImage(result.uri);
+    }
+  };
+
   return (
-    <PressablePlusIcon>
+    <PressablePlusIcon onPress={pickImage}>
       <Svg name="plus" />
     </PressablePlusIcon>
   );

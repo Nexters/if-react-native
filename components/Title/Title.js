@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import styled from '@emotion/native';
 import { FontText } from '../common';
 import TitleInput from './TitleInput';
 import { COMPONENT_TYPE } from '../../constants/types';
+import { StoryStateContext } from '../../context/Story';
 
 const Title = ({ type }) => {
+  const StoryState = useContext(StoryStateContext);
+  const [title, setTitle] = useState(StoryState.title);
+
   return (
     <TitleView>
       {type === COMPONENT_TYPE.TEXT ? (
-        <TitleText>title</TitleText>
+        <TitleText>{title}</TitleText>
       ) : (
-        <TitleInput />
+        <TitleInput title={title} setTitle={setTitle} />
       )}
     </TitleView>
   );

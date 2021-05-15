@@ -3,8 +3,15 @@ import styled from '@emotion/native';
 import { FontTextInput } from '../common';
 import { palette } from '../../style/palette';
 
-const TitleInput = () => {
-  return <Input placeholder="제목을 입력해주세요 :)" value={'hi'}></Input>;
+const TitleInput = ({ title, setTitle }) => {
+  const onChangeTitle = (titleText) => setTitle(titleText);
+  return (
+    <Input
+      placeholder="제목을 입력해주세요 :)"
+      value={title}
+      onChangeText={onChangeTitle}
+    ></Input>
+  );
 };
 
 export default TitleInput;

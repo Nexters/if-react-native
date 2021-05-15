@@ -29,7 +29,7 @@ function AlbumScreen() {
           <IconItem iconName="mypage" pressFunction={navigateToMyPage} />
         </Header>
         {
-          data.recorded.length === 0 ?
+          data && data.recorded.length === 0 ?
             <>
               <AlbumNationTitle>
                 오늘 식사시간에는{'\n'}
@@ -41,7 +41,7 @@ function AlbumScreen() {
             </> : null
         }
         {
-          data.recorded.length > 0 ?
+          data && data.recorded.length > 0 ?
             <>
               <AlbumNationTitle>{`기록한 나라 6`}</AlbumNationTitle>
               <AlbumList data={data.recorded} />

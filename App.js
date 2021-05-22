@@ -21,7 +21,7 @@ const queryClient = new QueryClient();
 export default function App() {
   useEffect(() => {
     (async () => {
-      await AsyncStorage.setItem('token', 'eyJ0eXAiOiJqd3QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJ1c2VyIiwic3ViIjoiTmV4dGVyc0lmIiwiaXNzIjoiTmV4dGVyczZ0ZWFtIiwiZXhwIjoxODc5MzE4NDgwNjcxLCJpYXQiOjE2MjAxMTg0ODA2NzEsImlkIjoiNWIxNmNlMDItYmI5Yi00YzUyLTgxYTQtOTlkYmZkY2E4NjQ4Iiwic29jaWFsIjoia2FrYW8ifQ.v5TuZg5E-O8LhA-iNHfzcEp8dlPRnPuvl1Sv8hAojIU')
+      await AsyncStorage.setItem('token', 'eyJ0eXAiOiJqd3QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJ1c2VyIiwic3ViIjoiTmV4dGVyc0lmIiwiaXNzIjoiTmV4dGVyczZ0ZWFtIiwiZXhwIjoxODgwODczNjA3MjEzLCJpYXQiOjE2MjE2NzM2MDcyMTMsImlkIjoiMWU1Zjc3MzMtMjAxNC00Nzc2LTk1MDItZjUxN2NlZjNmMTc0Iiwic29jaWFsIjoia2FrYW8ifQ.BzTltw94xDmcL2lWBYYiSurOnBVhoCz_4vTpzVi2zl8')
     })()
   }, [])
 

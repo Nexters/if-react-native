@@ -1,10 +1,10 @@
-import React, {useEffect} from 'react';
-import { StyleSheet, Text, View, Button, SafeAreaView } from 'react-native';
+import React from 'react';
+import { Text, Button } from 'react-native';
 import SafeAreaViewLayout from '../components/SafeAreaViewLayout';
 import { Svg } from '../assets';
 import styled from '@emotion/native';
 import * as Google from 'expo-google-app-auth'
-
+import * as AppleAuthentication from 'expo-apple-authentication'; 
 
 function LoginScreen(props) {
 
@@ -41,6 +41,24 @@ function LoginScreen(props) {
       console.log(e); 
     }
   } 
+
+  async function signInApple() {
+    console.log("sign in apple")
+    try {
+      const credential = await AppleAuthentication.signInAsync({
+        requestedScopes: [
+          AppleAuthentication.AppleAuthenticationScope.FULL_NAME, 
+          AppleAuthentication.AppleAuthenticationScope.EMAIL, 
+        ], 
+      }); 
+      console.log(credential)
+    } catch (e) {
+      console.log(e); 
+      console.log(e.code); 
+    }
+  }
+
+  
   
   return (
     <SafeAreaViewLayout>
@@ -50,6 +68,14 @@ function LoginScreen(props) {
 
       <Text onPress={signInWithGoogleAsync}>Google 로그인</Text>
       <Text onPress={signOutGoogle}>Google 사인아웃</Text>
+
+      <AppleAuthentication.AppleAuthenticationButton
+      buttonType={AppleAuthentication.AppleAuthenticationButtonType.SIGN_IN}
+      buttonStyle={AppleAuthentication.AppleAuthenticationButtonStyle.BLACK}
+      cornerRadius={5}
+      style={{ width: 200, height: 44 }}
+      onPress={signInApple}
+    />
 
       <Button title="앨범" onPress={() => props.navigation.navigate('Album')} />
     </SafeAreaViewLayout>

@@ -30,7 +30,7 @@ const StoryWrapper = styled.View`
   width: 220px;
   height: 282px;
   margin: ${(props) =>
-    props.position === 'left' ? '0 auto 60px 20px' : '0 20px 60px auto'};
+    props.position === 'left' ? '0 auto 60px 0' : '0 0 60px auto'};
   padding: 12px;
   border: 1px solid #1a1515;
   background-color: #ffffff;

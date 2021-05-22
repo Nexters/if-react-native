@@ -9,11 +9,15 @@ const AlbumFeedScreen = ({route}) => {
       return route.params.countryType;
   }, [route]);
 
+  console.log('countryType', countryType);
+
   const {
     isLoading,
     error,
     data
   } = useQuery(['getCountryFeeds', countryType], getCountryFeeds);
+
+  console.log('data', data);
 
   return (
     <SafeAreaViewLayout includeFlex={true}>

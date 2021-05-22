@@ -4,14 +4,17 @@ import { palette } from '../../style/palette';
 import { Svg } from '../../assets';
 import FontTextInput from '../common/FontTextInput';
 
-const SearchInput = () => {
+const SearchInput = (props) => {
+  const {searchKeyword, onChangeSearchKeyword} = props;
+
   return (
     <SearchInputWrapper>
       <Svg name={'search'} />
       <Input
-        value={'123'}
+        value={searchKeyword}
         placeholder={'나라를 검색해보세요'}
         maxLength={11}
+        onChangeText={onChangeSearchKeyword}
       />
     </SearchInputWrapper>
   );

@@ -5,7 +5,7 @@ import { Pressable } from 'react-native';
 import { palette } from '../../style/palette';
 import { FontText } from '../common';
 
-const EmptyCountryFallback = () => {
+const EmptyCountryFallback = ({searchKeyword}) => {
   return (
     <EmptyCountryWrapper>
       <Svg name={'searchEmpty'} />
@@ -14,7 +14,7 @@ const EmptyCountryFallback = () => {
         <FallbackText>{`검색하신 나라로 입력할까요?`}</FallbackText>
       </FallbackTextWrapper>
       <Pressable onPress={() => console.log('press')}>
-        <ButtonText>{`'남아프리카공'(으)로 입력하기`}</ButtonText>
+        <ButtonText>{`'${searchKeyword}'(으)로 입력하기`}</ButtonText>
       </Pressable>
     </EmptyCountryWrapper>
   );

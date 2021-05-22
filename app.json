@@ -17,7 +17,14 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true, 
+      "usesAppleSignIn": true, 
+      "bundleIdentifier": "com.travelers.if", 
+      "config": {
+        "googleSignIn": {
+          "reservedClientId": "com.googleusercontent.apps.580970977777-hd9briu5unomfs8kvusk9253g8hcm8in"
+        }
+      }
     },
     "android": {
       "adaptiveIcon": {

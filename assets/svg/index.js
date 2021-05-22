@@ -11,6 +11,7 @@ import naver from './naver';
 import arrow from './arrow';
 import arrow2 from './arrow2';
 import cancel from './cancel';
+import bigCancel from './bigCancel';
 import apple from './apple';
 import album from './album';
 import mypage from './mypage';
@@ -33,6 +34,7 @@ export default {
   arrow,
   arrow2,
   cancel,
+  bigCancel,
   apple,
   album,
   mypage,

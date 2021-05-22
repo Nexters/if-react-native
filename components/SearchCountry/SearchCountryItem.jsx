@@ -1,13 +1,15 @@
 import React from 'react';
 import styled from '@emotion/native';
+import { SvgUri } from 'react-native-svg';
+
 import { FontText } from '../common';
 import { palette } from '../../style/palette';
 
-const SearchCountryItem = ({uri, name}) => {
+const SearchCountryItem = ({imageUri, name}) => {
   return (
     <CountryItemWrapper>
       <CountryFlagImage
-        source={{uri}}
+        uri={imageUri}
       />
       <CountryName>{name}</CountryName>
     </CountryItemWrapper>
@@ -24,7 +26,7 @@ const CountryItemWrapper = styled.View`
   }
 `;
 
-const CountryFlagImage = styled.Image`
+const CountryFlagImage = styled(SvgUri)`
   background-color: ${palette.darkgray};
   width: 36px;
   height: 24px;

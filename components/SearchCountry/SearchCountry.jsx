@@ -43,7 +43,9 @@ const SearchCountry = () => {
       />
       {
         visibleData && visibleData.length > 0 ?
-          <SearchCountryList /> : null
+          <SearchCountryList
+            countryData={visibleData}
+          /> : null
       }
       {
         visibleData && visibleData.length === 0 ?
